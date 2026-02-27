@@ -9,8 +9,22 @@ Based on the paper:
 > Eurographics Workshop on Natural Phenomena, 2007.
 > [PDF](https://www.algorithmicbotany.org/papers/colonization.egwnp2007.pdf)
 
-<!-- Add a demo video or screenshots here -->
-<!-- ![Demo](media/demo.gif) -->
+<video src="https://github.com/jakobrichert/space-colonization/raw/main/media/demo.mp4" controls width="100%"></video>
+
+<p align="center">
+  <img src="media/growing.png" width="48%" alt="Tree mid-growth with attraction points visible" />
+  <img src="media/complete.png" width="48%" alt="Fully grown tree with 4500 points consumed" />
+</p>
+<p align="center">
+  <em>Left: Tree mid-growth with remaining attraction points (green). Right: Completed tree, all 4500 points consumed.</em>
+</p>
+
+<p align="center">
+  <img src="media/points.png" width="70%" alt="Dense attraction point cloud during early growth" />
+</p>
+<p align="center">
+  <em>Dense point cloud (4500 points) during early growth — the tree carves its way through the volume.</em>
+</p>
 
 ## How It Works
 
@@ -48,6 +62,8 @@ Raylib is fetched and built automatically by CMake — no manual install needed.
 ### Build
 
 ```bash
+git clone https://github.com/jakobrichert/space-colonization.git
+cd space-colonization
 cmake -B build -DCMAKE_BUILD_TYPE=Release
 cmake --build build -j$(nproc)
 ```
@@ -67,8 +83,8 @@ cmake --build build -j$(nproc)
 | `P` | Toggle attraction point visibility |
 | `R` | Reset & regenerate with current parameters |
 | `TAB` | Toggle parameter panel |
-| `UP/DOWN` | Select parameter |
-| `LEFT/RIGHT` | Adjust selected parameter |
+| `UP` / `DOWN` | Select parameter |
+| `LEFT` / `RIGHT` | Adjust selected parameter |
 | `F11` | Toggle fullscreen |
 | Left mouse drag | Orbit camera |
 | Scroll wheel | Zoom in/out |
@@ -99,6 +115,7 @@ Crown shape and point count take effect on reset (`R`).
 │   ├── main.c            # Rendering, camera, UI, controls
 │   ├── tree.c            # Space colonization algorithm
 │   └── tree.h            # Data structures and API
+└── media/                # Screenshots and demo video
 ```
 
 ## Implementation Details
