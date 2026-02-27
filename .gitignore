@@ -1,0 +1,7 @@
+build/
+local_deps/
+*.deb
+*.o
+*.a
+.cache/
+compile_commands.json
